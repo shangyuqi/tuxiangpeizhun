@@ -1,0 +1,11 @@
+P=[635,581,860,1543 1528 2646 2518;
+    1404 1608 1893 1033 1174 712 1066;
+    1 1 1 1 1 1 1];
+Q=[967 974 1318 1750 1777 2737 2710;
+    1907 2118 2329 1332 1448 720 1084;
+    1 1 1 1 1 1 1];
+H=Q*P'*(P*P')^(-1);
+pic=imread('C:\Users\Dell\Desktop\second assignment\Image B.jpg');
+tform=maketform('projective',H');
+[newpic,x,y]=imtransform(pic,tform);
+imshow(newpic)
